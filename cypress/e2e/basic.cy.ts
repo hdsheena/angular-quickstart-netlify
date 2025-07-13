@@ -7,10 +7,7 @@ describe('Discount Tire Website', () => {
 
   it('loads the main page successfully', () => {
     cy.get('app-header').should('be.visible')
-    cy.get('app-hero').should('be.visible')
-    cy.get('app-services').should('be.visible')
-    cy.get('app-about').should('be.visible')
-    cy.get('app-contact').should('be.visible')
+    cy.get('app-main-content').should('be.visible')
     cy.get('app-footer').should('be.visible')
   })
 
@@ -55,7 +52,7 @@ describe('Discount Tire Website', () => {
 
   it('shows service cards', () => {
     cy.get('.service-card', { timeout: 10000 })
-    .should('have.length.greaterThan', 0)
+    .should('have.length', 3) // Updated to expect 3 services instead of 6
     
     // Check for tire services specifically
     cy.get('.service-card')
@@ -105,18 +102,16 @@ describe('Discount Tire Website', () => {
     .should('be.disabled')
     
     // Fill required fields with force option to avoid header overlap
+    // Updated to match simplified form (only firstName, not lastName)
     cy.get('input[name="firstName"]')
     .scrollIntoView()
-    .type('John', { force: true })
-    
-    cy.get('input[name="lastName"]')
-    .type('Doe', { force: true })
-    
-    cy.get('input[name="email"]')
-    .type('john.doe@example.com', { force: true })
+    .type('John Doe', { force: true })
     
     cy.get('input[name="phone"]')
     .type('(250) 123-4567', { force: true })
+    
+    cy.get('input[name="email"]')
+    .type('john.doe@example.com', { force: true })
     
     // Now submit button should be enabled
     cy.get('.submit-btn')

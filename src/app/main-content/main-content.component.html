@@ -1,0 +1,242 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Trusted Tires & Auto Repair Shop</h1>
+        <p class="hero-subtitle">Professional automotive services in Kamloops, BC. Quality repairs, honest pricing, and exceptional customer service.</p>
+        
+        <div class="hero-features">
+          <div class="feature">
+            <i class="fas fa-certificate"></i>
+            <span>Certified Technicians</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-clock"></i>
+            <span>Quick Service</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-handshake"></i>
+            <span>Honest Pricing</span>
+          </div>
+        </div>
+        
+        <div class="hero-actions">
+          <a href="#contact" class="primary-btn">Book Appointment</a>
+          <a href="tel:(250) 374-6956" class="secondary-btn">
+            <i class="fas fa-phone"></i>
+            Call Now
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <img src="assets/images/tires on rack.png" alt="Professional Tire Service" class="hero-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Expert automotive services you can trust</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-image">
+          <img [src]="service.image" [alt]="service.title" class="service-img">
+        </div>
+        <div class="service-icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+    
+    <div class="services-cta">
+      <h3>Need Something Else?</h3>
+      <p>We offer many other automotive services. Call us to discuss your needs.</p>
+      <a href="tel:(250) 374-6956" class="primary-btn">Call for More Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Brands Section -->
+<section class="brands-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Trusted Tire Brands</h2>
+      <p>We work with the industry's leading tire manufacturers</p>
+    </div>
+    
+    <div class="brands-grid">
+      <div class="brand-item" *ngFor="let brand of tireBrands">
+        <img [src]="brand.logo" [alt]="brand.name" class="brand-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vehicle Brands Section -->
+<section class="vehicle-brands-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Vehicle Brands We Service</h2>
+      <p>Expert service for all major automotive brands</p>
+    </div>
+    
+    <div class="vehicle-brands-grid">
+      <div class="vehicle-brand-item" *ngFor="let brand of vehicleBrands">
+        <img [src]="brand.logo" [alt]="brand.name" class="vehicle-brand-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="section-header">
+          <h2>About Discount Tires & Auto</h2>
+          <p class="tagline">Your trusted automotive partner in Kamloops, BC</p>
+        </div>
+        
+        <div class="about-description">
+          <p>
+            At Discount Tires & Auto, we've been serving the Kamloops community for over 15 years 
+            with honest, reliable, and professional automotive services. Our team of certified 
+            technicians is dedicated to keeping your vehicle safe and running smoothly.
+          </p>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <img src="assets/images/About-Section-New-Template-1.png" alt="Our Professional Auto Shop" class="shop-image">
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact Us</h2>
+      <p>Get in touch with our expert team today</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-details">
+            <h3>Call Us</h3>
+            <p>{{ contactInfo.phone }}</p>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-details">
+            <h3>Email Us</h3>
+            <p>{{ contactInfo.email }}</p>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-details">
+            <h3>Visit Us</h3>
+            <p>{{ contactInfo.address }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <div class="form-header">
+          <h3>Quick Contact</h3>
+          <p>Send us a message and we'll get back to you soon</p>
+        </div>
+        
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+          <div class="form-group">
+            <label for="firstName">Name *</label>
+            <input 
+              type="text" 
+              id="firstName" 
+              name="firstName" 
+              ngModel 
+              required 
+              #firstName="ngModel"
+              class="form-control"
+              [class.error]="firstName.invalid && firstName.touched">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              ngModel 
+              required 
+              #phone="ngModel"
+              class="form-control"
+              [class.error]="phone.invalid && phone.touched">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              ngModel 
+              required 
+              email
+              #email="ngModel"
+              class="form-control"
+              [class.error]="email.invalid && email.touched">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              ngModel 
+              rows="4" 
+              class="form-control"
+              placeholder="Tell us about your vehicle and the service you need..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+/* Image placeholder styles - these can be replaced with actual images */
+
+/* Placeholder for images that are referenced but not available */
+img[src*="discount-tires-logo.png"],
+img[src*="tire-background.jpg"],
+img[src*="mechanic-service.jpg"],
+img[src*="shop-interior.jpg"] {
+  background: linear-gradient(135deg, #8B1538, #a91d42);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+/* Logo placeholder */
+img[src*="discount-tires-logo.png"] {
+  width: 120px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+img[src*="discount-tires-logo.png"]::before {
+  content: "LOGO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+/* Background image placeholders */
+img[src*="tire-background.jpg"],
+img[src*="mechanic-service.jpg"],
+img[src*="shop-interior.jpg"] {
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+img[src*="tire-background.jpg"]::before {
+  content: "Tire Background Image";
+}
+
+img[src*="mechanic-service.jpg"]::before {
+  content: "Mechanic Service Image";
+}
+
+img[src*="shop-interior.jpg"]::before {
+  content: "Shop Interior Image";
+}
+
+/* Fallback for broken images */
+img {
+  border: 2px dashed #ddd;
+  background: #f8f9fa;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+img:before {
+  content: "Image placeholder - " attr(alt);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Override for properly loaded images */
+img[src]:not([src=""]) {
+  border: none;
+  background: none;
+  color: initial;
+}
+
+img[src]:not([src=""])::before {
+  display: none;
+}

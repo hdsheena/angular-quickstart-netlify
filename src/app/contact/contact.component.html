@@ -1,0 +1,162 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact Us</h2>
+      <p>Get in touch with our expert team today</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-details">
+            <h3>Call Us</h3>
+            <p>{{ contactInfo.phone }}</p>
+            <span>Ready to help you</span>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-details">
+            <h3>Email Us</h3>
+            <p>{{ contactInfo.email }}</p>
+            <span>We'll respond quickly</span>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-details">
+            <h3>Visit Us</h3>
+            <p>{{ contactInfo.address }}</p>
+            <span>Come see our facility</span>
+          </div>
+        </div>
+        
+        <div class="hours-card">
+          <h3>Business Hours</h3>
+          <div class="hours-list">
+            <div class="hours-item">
+              <span class="day">{{ contactInfo.hours.weekdays }}</span>
+            </div>
+            <div class="hours-item">
+              <span class="day">{{ contactInfo.hours.saturday }}</span>
+            </div>
+            <div class="hours-item">
+              <span class="day">{{ contactInfo.hours.sunday }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <div class="form-header">
+          <h3>Book Your Appointment</h3>
+          <p>Fill out the form below and we'll get back to you soon</p>
+        </div>
+        
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input 
+                type="text" 
+                id="firstName" 
+                name="firstName" 
+                ngModel 
+                required 
+                #firstName="ngModel"
+                class="form-control"
+                [class.error]="firstName.invalid && firstName.touched">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input 
+                type="text" 
+                id="lastName" 
+                name="lastName" 
+                ngModel 
+                required 
+                #lastName="ngModel"
+                class="form-control"
+                [class.error]="lastName.invalid && lastName.touched">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                ngModel 
+                required 
+                email
+                #email="ngModel"
+                class="form-control"
+                [class.error]="email.invalid && email.touched">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                ngModel 
+                required 
+                #phone="ngModel"
+                class="form-control"
+                [class.error]="phone.invalid && phone.touched">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" ngModel class="form-control">
+              <option value="">Select a service</option>
+              <option value="tire-service">Tire Service</option>
+              <option value="oil-change">Oil Change</option>
+              <option value="brake-service">Brake Service</option>
+              <option value="battery-service">Battery Service</option>
+              <option value="general-repair">General Repair</option>
+              <option value="inspection">Inspection</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              ngModel 
+              rows="4" 
+              class="form-control"
+              placeholder="Tell us about your vehicle and the service you need..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="map-section">
+      <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Find Us on the Map</h3>
+        <p>Located in the heart of Kamloops, BC</p>
+        <button class="directions-btn">Get Directions</button>
+      </div>
+    </div>
+  </div>
+</section>

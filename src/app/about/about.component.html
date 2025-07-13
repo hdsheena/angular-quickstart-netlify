@@ -1,0 +1,71 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="section-header">
+          <h2>About Discount Tires & Auto</h2>
+          <p class="tagline">Your trusted automotive partner in Kamloops, BC</p>
+        </div>
+        
+        <div class="about-description">
+          <p>
+            At Discount Tires & Auto, we've been serving the Kamloops community for over 15 years 
+            with honest, reliable, and professional automotive services. Our team of certified 
+            technicians is dedicated to keeping your vehicle safe and running smoothly.
+          </p>
+          
+          <p>
+            We believe in transparent pricing, quality workmanship, and exceptional customer service. 
+            Whether you need a simple oil change or complex engine repair, we treat every vehicle 
+            with the same level of care and attention to detail.
+          </p>
+        </div>
+        
+        <div class="why-choose-us">
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>
+              <i class="fas fa-certificate"></i>
+              Certified and experienced technicians
+            </li>
+            <li>
+              <i class="fas fa-tools"></i>
+              State-of-the-art equipment and tools
+            </li>
+            <li>
+              <i class="fas fa-handshake"></i>
+              Honest and transparent pricing
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              Quick turnaround times
+            </li>
+            <li>
+              <i class="fas fa-shield-alt"></i>
+              Warranty on all services
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <img src="assets/images/shop-interior.jpg" alt="Our Auto Shop" class="shop-image">
+        <div class="image-overlay">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+          <p>Take a virtual tour of our facility</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

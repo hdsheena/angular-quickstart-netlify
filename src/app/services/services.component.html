@@ -1,0 +1,33 @@
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Professional automotive services you can trust</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">
+            <i class="fas fa-check"></i>
+            {{ feature }}
+          </li>
+        </ul>
+        <button class="service-btn">Learn More</button>
+      </div>
+    </div>
+    
+    <div class="services-cta">
+      <div class="cta-content">
+        <h3>Need a Service Not Listed?</h3>
+        <p>We offer comprehensive automotive services. Contact us to discuss your specific needs.</p>
+        <button class="cta-button">Contact Us Today</button>
+      </div>
+    </div>
+  </div>
+</section>

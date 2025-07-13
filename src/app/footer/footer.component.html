@@ -1,0 +1,95 @@
+<footer class="main-footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-sections">
+        <div class="footer-section company-info">
+          <div class="footer-logo">
+            <img src="assets/images/discount-tires-logo.png" alt="Discount Tires & Auto" class="logo-img">
+            <span class="logo-text">Discount Tires & Auto</span>
+          </div>
+          <p class="company-description">
+            Your trusted automotive partner in Kamloops, BC. We provide reliable, 
+            professional service with honest pricing and quality workmanship.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Google">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Yelp">
+              <i class="fab fa-yelp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li *ngFor="let link of quickLinks">
+              <a [href]="link.href">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Our Services</h3>
+          <ul class="footer-links">
+            <li *ngFor="let service of services">
+              <a href="#services">{{ service }}</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-section contact-section">
+          <h3>Contact Info</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <p>123 Auto Service Way</p>
+                <p>Kamloops, BC V2C 1N2</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <p>(250) 374-6956</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <p>info@discounttirekamloops.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                <p>Sat: 8:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <p>&copy; {{ currentYear }} Discount Tires & Auto. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
